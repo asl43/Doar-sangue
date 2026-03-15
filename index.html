@@ -13,12 +13,12 @@
 :root{ --red:#c40000;--red-d:#8b0000;--red-l:#ff5555;--tr:.22s ease; }
 [data-theme="dark"]{
   --bg:#080808;--s1:#131313;--s2:#1c1c1c;--bord:#2c2c2c;
-  --text:#efefef;--muted:#666;--sh:0 4px 20px rgba(0,0,0,.5);
+  --text:#efefef;--muted:#666;--sh:0 4px 24px rgba(0,0,0,.5);
   --hero:linear-gradient(155deg,#3a0000 0%,#0a0000 65%);
 }
 [data-theme="light"]{
   --bg:#f3eeee;--s1:#fff;--s2:#f0ecec;--bord:#ddd;
-  --text:#1a1a1a;--muted:#999;--sh:0 4px 20px rgba(0,0,0,.09);
+  --text:#1a1a1a;--muted:#999;--sh:0 4px 24px rgba(0,0,0,.08);
   --hero:linear-gradient(155deg,#c40000 0%,#7a0000 65%);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -36,30 +36,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .sfill{height:100%;background:#ff5555;animation:sf 2.4s ease forwards}
 @keyframes sf{from{width:0}to{width:100%}}
 
-/* SETUP */
-#setupTela{position:fixed;inset:0;z-index:990;background:var(--bg);display:none;overflow-y:auto;padding:30px 20px 50px;transition:background var(--tr)}
-#setupTela.open{display:block}
-.sw{max-width:440px;margin:0 auto}
-.sw h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--red-l);margin-bottom:8px}
-.sw>p{font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:22px}
-.steps-box{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:16px;margin-bottom:20px}
-.steps-box h3{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:13px}
-.si{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.sn{width:24px;height:24px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:1px}
-.si p{font-size:.8rem;color:var(--text);line-height:1.6}
-.si p a{color:var(--red-l);text-decoration:none}
-.si p b{color:var(--red-l)}
-.si p code{background:var(--s2);padding:1px 5px;border-radius:4px;font-size:.78rem;font-family:monospace}
-.cfg-f{margin-bottom:11px}
-.cfg-f label{display:block;font-size:.7rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.7px}
-.cfg-f input{width:100%;background:var(--s1);border:1px solid var(--bord);border-radius:9px;padding:10px 12px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.85rem;transition:border .18s}
-.cfg-f input:focus{outline:none;border-color:var(--red)}
-.cfg-f .hint{font-size:.7rem;color:var(--muted);margin-top:3px}
-.btn-cfg{width:100%;padding:13px;background:var(--red);color:#fff;border:none;border-radius:9px;font-size:.95rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;margin-top:4px}
-.btn-cfg:hover{background:var(--red-d)}
-.btn-cfg:disabled{background:#555;cursor:not-allowed}
-.conn-status{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--s2);border-radius:9px;font-size:.8rem;margin-bottom:14px}
-
 /* APP */
 #app{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .tela{display:none;flex:1;flex-direction:column;overflow:hidden;animation:fup .22s ease}
@@ -72,22 +48,27 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .topbar .sp{flex:1}
 .btn-back{background:none;border:1px solid var(--bord);color:var(--muted);padding:5px 11px;border-radius:20px;cursor:pointer;font-size:.76rem;transition:all .2s;font-family:'DM Sans',sans-serif}
 .btn-back:hover{border-color:var(--red);color:var(--red-l)}
+.btn-icon{background:none;border:1px solid var(--bord);color:var(--muted);padding:5px 9px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}
+.btn-icon:hover{border-color:var(--red);color:var(--red-l)}
 
 /* MENU */
 #menu{overflow-y:auto}
 .hero{background:var(--hero);padding:46px 20px 30px;text-align:center;position:relative;overflow:hidden;flex-shrink:0}
 .hero::after{content:'🩸';position:absolute;font-size:200px;opacity:.04;right:-30px;top:-30px;pointer-events:none}
 .hero-btns{position:absolute;top:14px;right:14px;display:flex;gap:7px}
-.hero-btns button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;padding:5px 10px;border-radius:20px;cursor:pointer;font-size:.78rem;font-family:'DM Sans',sans-serif;transition:all .2s}
-.hero-btns button:hover{background:rgba(255,255,255,.2)}
+.hbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;padding:5px 10px;border-radius:20px;cursor:pointer;font-size:.78rem;font-family:'DM Sans',sans-serif;transition:all .2s}
+.hbtn:hover{background:rgba(255,255,255,.2)}
 .hero h1{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;line-height:1.1}
 .hero p{color:rgba(255,255,255,.45);margin-top:7px;font-size:.86rem}
-.hero-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:3px 11px;font-size:.68rem;color:rgba(255,255,255,.4);margin-top:12px}
-.conn-dot{width:7px;height:7px;border-radius:50%;background:#444;display:inline-block}
-.conn-dot.ok{background:#22c55e}
-.conn-dot.err{background:#ef4444}
-.conn-dot.loading{background:#f59e0b;animation:blink .8s infinite}
+.conn-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:4px 12px;font-size:.7rem;color:rgba(255,255,255,.5);margin-top:12px;cursor:pointer;transition:background .2s}
+.conn-pill:hover{background:rgba(255,255,255,.12)}
+.cdot{width:7px;height:7px;border-radius:50%;background:#444;flex-shrink:0;transition:background .3s}
+.cdot.ok{background:#22c55e}
+.cdot.err{background:#ef4444}
+.cdot.spin{background:#f59e0b;animation:blink .8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
+/* GRID */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:16px;max-width:480px;margin:0 auto;width:100%}
 .gcard{background:var(--s1);border:1px solid var(--bord);border-radius:15px;padding:19px 12px;text-align:center;cursor:pointer;transition:all .2s;user-select:none}
 .gcard:active{transform:scale(.95)}
@@ -95,6 +76,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .gcard .gi{font-size:30px;margin-bottom:8px}
 .gcard .gl{font-size:.78rem;font-weight:500;line-height:1.3}
 
+/* CHAT ENTRY */
 .entry-sect{padding:0 16px 22px;max-width:480px;margin:0 auto;width:100%}
 .ebox{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:15px;transition:background var(--tr),border-color var(--tr)}
 .ebox h3{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
@@ -121,34 +103,43 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 
 /* LISTS */
 .lbody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:13px;display:flex;flex-direction:column;gap:10px}
-.item{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:14px;box-shadow:var(--sh);transition:background var(--tr),border-color var(--tr)}
+.item{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:14px;box-shadow:var(--sh);transition:background var(--tr),border-color var(--tr);animation:fup .2s ease}
 .item .badge{display:inline-block;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-bottom:6px}
+.item .badge.urgente{background:#b45309}
 .item h3{font-size:.9rem;margin-bottom:4px}
 .item .meta{font-size:.75rem;color:var(--muted);line-height:1.9}
-.code-line{margin-top:8px;background:var(--s2);border-radius:7px;padding:7px 10px;display:flex;align-items:center;justify-content:space-between}
+.code-line{margin-top:8px;background:var(--s2);border-radius:7px;padding:7px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .code-val{font-family:monospace;font-size:1rem;letter-spacing:5px;color:var(--red-l);font-weight:700}
 .actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
 .btn-s{padding:6px 11px;font-size:.75rem;border-radius:7px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .2s}
 .bc{background:var(--red);color:#fff}.bc:hover{background:var(--red-d)}
 .bd{background:var(--s2);color:var(--muted);border:1px solid var(--bord)}.bd:hover{border-color:var(--red);color:var(--red-l)}
+.bg{background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3)}.bg:hover{background:rgba(34,197,94,.25)}
 .empty{text-align:center;color:var(--muted);padding:46px 20px;font-size:.84rem;line-height:1.8}
-.empty a{color:var(--red-l);text-decoration:none}
 .loading{text-align:center;color:var(--muted);padding:40px}
 .spinner{display:inline-block;width:22px;height:22px;border:2px solid var(--bord);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin-bottom:8px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.refresh-btn{background:none;border:1px solid var(--bord);color:var(--muted);padding:5px 12px;border-radius:20px;cursor:pointer;font-size:.76rem;font-family:'DM Sans',sans-serif;transition:all .2s;margin-left:auto}
-.refresh-btn:hover{border-color:var(--red);color:var(--red-l)}
+.sync-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;background:var(--s2);border-bottom:1px solid var(--bord);font-size:.72rem;color:var(--muted);flex-shrink:0}
+.sync-bar .dot-sync{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0}
+.sync-bar .dot-sync.syncing{background:#f59e0b;animation:blink .8s infinite}
 
 /* MODAIS */
 .ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:200;align-items:center;justify-content:center;padding:16px}
 .ov.open{display:flex}
-.modal{background:var(--s1);border:1px solid var(--bord);border-radius:18px;padding:24px 20px;max-width:330px;width:100%;text-align:center;animation:fup .25s ease;transition:background var(--tr),border-color var(--tr)}
+.modal{background:var(--s1);border:1px solid var(--bord);border-radius:18px;padding:24px 20px;max-width:340px;width:100%;text-align:center;animation:fup .25s ease;transition:background var(--tr),border-color var(--tr)}
 .modal h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:7px}
 .modal p{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:4px}
 .mcode{font-family:monospace;font-size:2.3rem;font-weight:700;color:var(--red-l);letter-spacing:8px;margin:13px 0}
 .mhint{background:rgba(196,0,0,.07);border:1px solid rgba(196,0,0,.18);border-radius:7px;padding:9px 12px;font-size:.72rem;color:var(--muted);line-height:1.5;margin-bottom:12px}
 .cbtn{background:var(--s2);border:1px solid var(--bord);color:var(--text);padding:6px 14px;border-radius:7px;cursor:pointer;font-size:.78rem;margin-bottom:9px;font-family:'DM Sans',sans-serif;transition:all .2s}
 .cbtn:hover{border-color:var(--red);color:var(--red-l)}
+
+/* MODAL EDITAR */
+.modal-edit .field{text-align:left}
+
+/* SHEETS LINK */
+.sheets-link{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:9px;font-size:.76rem;color:#22c55e;text-decoration:none;margin-top:12px;transition:background .2s}
+.sheets-link:hover{background:rgba(34,197,94,.12)}
 
 /* CHAT */
 #chatTela{overflow:hidden}
@@ -160,7 +151,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .sdot{width:7px;height:7px;border-radius:50%;background:#444;display:inline-block;flex-shrink:0;transition:background .3s}
 .sdot.online{background:#22c55e}
 .sdot.connecting{background:#f59e0b;animation:blink .8s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 .pbar{flex-shrink:0;background:rgba(196,0,0,.05);border-bottom:1px solid rgba(196,0,0,.1);padding:5px 13px;text-align:center;font-size:.67rem;color:var(--muted)}
 .cmsgs{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:13px 11px;display:flex;flex-direction:column;gap:6px;background:var(--bg);transition:background var(--tr)}
 .smsg{text-align:center;color:var(--muted);font-size:.68rem;background:var(--s1);border-radius:20px;padding:4px 12px;align-self:center;max-width:88%;transition:background var(--tr)}
@@ -186,70 +176,37 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 </head>
 <body>
 
-<!-- SPLASH -->
 <div id="splash">
   <div class="drop">🩸</div>
   <h1>Rede de Doadores</h1>
-  <p>Dados salvos no Google Sheets · Tempo real</p>
+  <p>Integrado ao Google Sheets · Bidirecional</p>
   <div class="sbar"><div class="sfill"></div></div>
 </div>
 
-<!-- TELA DE CONFIGURAÇÃO -->
-<div id="setupTela">
-  <div class="sw">
-    <h2>📊 Conectar ao Google Sheets</h2>
-    <p>Configure uma vez — os dados de todos os celulares vão para a mesma planilha.</p>
-
-    <div class="steps-box">
-      <h3>Passo a passo (5 minutos)</h3>
-      <div class="si"><div class="sn">1</div>
-        <p>Acesse <a href="https://sheets.google.com" target="_blank">sheets.google.com</a> e crie uma planilha nova. Copie o <b>ID da planilha</b> da URL:<br><code>docs.google.com/spreadsheets/d/<b>ID_AQUI</b>/edit</code></p>
-      </div>
-      <div class="si"><div class="sn">2</div>
-        <p>Acesse <a href="https://script.google.com" target="_blank">script.google.com</a> → Novo projeto. Cole o código do arquivo <b>codigo_apps_script.gs</b> (incluído no ZIP). Coloque o ID da planilha na variável <b>SHEET_ID</b>.</p>
-      </div>
-      <div class="si"><div class="sn">3</div>
-        <p>No Apps Script: <b>Implantar → Novo deployment</b> → Tipo: App da Web → Executar como: <b>Eu</b> → Quem tem acesso: <b>Qualquer pessoa</b> → Implantar</p>
-      </div>
-      <div class="si"><div class="sn">4</div>
-        <p>Copie a <b>URL do deployment</b> (começa com <code>https://script.google.com/macros/s/...</code>) e cole abaixo</p>
-      </div>
-    </div>
-
-    <div id="connStatus" class="conn-status" style="display:none"></div>
-
-    <div class="cfg-f">
-      <label>URL do Apps Script (deployment)</label>
-      <input id="c_url" placeholder="https://script.google.com/macros/s/AKfy.../exec">
-      <div class="hint">Cole a URL completa gerada no passo 4</div>
-    </div>
-
-    <button class="btn-cfg" id="btnConectar" onclick="salvarConfig()">🔗 Conectar e testar</button>
-  </div>
-</div>
-
-<!-- APP -->
 <div id="app">
-  <!-- MENU -->
+
+  <!-- ═══ MENU ═══ -->
   <div id="menu" class="tela">
     <div class="hero">
       <div class="hero-btns">
-        <button onclick="toggleTheme()">☀️/🌙</button>
-        <button onclick="abrirSetup()">⚙️</button>
+        <button class="hbtn" onclick="toggleTheme()">☀️/🌙</button>
+        <button class="hbtn" onclick="window.open('https://docs.google.com/spreadsheets/d/1C0dmmsMHo-WNqHfKUxTckBpeYP7_Za_kC2e_r29qFpI/edit','_blank')">📊 Planilha</button>
       </div>
       <h1>Banco de<br>Doadores</h1>
-      <p>Cadastros salvos no Google Sheets</p>
-      <div class="hero-tag">
-        <span class="conn-dot loading" id="heroConnDot"></span>
-        <span id="heroConnTxt">Verificando...</span>
+      <p>Dados sincronizados com Google Sheets</p>
+      <div class="conn-pill" onclick="testarConn()">
+        <span class="cdot spin" id="heroDot"></span>
+        <span id="heroTxt">Verificando conexão...</span>
       </div>
     </div>
+
     <div class="grid">
       <div class="gcard" onclick="ir('cadDoador')"><div class="gi">🩸</div><div class="gl">Cadastrar Doador</div></div>
       <div class="gcard" onclick="ir('cadPaciente')"><div class="gi">🏥</div><div class="gl">Registrar Paciente</div></div>
       <div class="gcard" onclick="verPacientes()"><div class="gi">📋</div><div class="gl">Pacientes que precisam</div></div>
       <div class="gcard" onclick="verDoadores()"><div class="gi">👥</div><div class="gl">Doadores disponíveis</div></div>
     </div>
+
     <div class="entry-sect">
       <div class="ebox">
         <h3>💬 Entrar em chat anônimo</h3>
@@ -258,10 +215,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
           <button onclick="entrarChat()">Entrar</button>
         </div>
       </div>
+      <a class="sheets-link" href="https://docs.google.com/spreadsheets/d/1C0dmmsMHo-WNqHfKUxTckBpeYP7_Za_kC2e_r29qFpI/edit" target="_blank">
+        📊 Abrir planilha Google Sheets →
+      </a>
     </div>
   </div>
 
-  <!-- CAD DOADOR -->
+  <!-- ═══ CAD DOADOR ═══ -->
   <div id="cadDoador" class="tela">
     <div class="topbar"><span>🩸</span><h2>Cadastro de Doador</h2><div class="sp"></div><button class="btn-back" onclick="ir('menu')">← Voltar</button></div>
     <div class="sbody"><div class="fwrap">
@@ -275,11 +235,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
       <div class="field"><label>Disponibilidade</label>
         <select id="d_apto"><option value="sim">Apto a doar</option><option value="nao">Não apto no momento</option></select>
       </div>
-      <button class="btn-p" id="btnD" onclick="salvarDoador()">Cadastrar</button>
+      <button class="btn-p" id="btnD" onclick="salvarDoador()">Cadastrar na Planilha</button>
     </div></div>
   </div>
 
-  <!-- CAD PACIENTE -->
+  <!-- ═══ CAD PACIENTE ═══ -->
   <div id="cadPaciente" class="tela">
     <div class="topbar"><span>🏥</span><h2>Registrar Paciente</h2><div class="sp"></div><button class="btn-back" onclick="ir('menu')">← Voltar</button></div>
     <div class="sbody"><div class="fwrap">
@@ -291,29 +251,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
       </div>
       <div class="field"><label>Doadores necessários</label><input id="p_qtd" type="number" placeholder="Quantidade" min="1"></div>
       <div class="field"><label>Observações</label><textarea id="p_obs" placeholder="Informações adicionais..."></textarea></div>
-      <button class="btn-p" id="btnP" onclick="salvarPaciente()">Registrar</button>
+      <button class="btn-p" id="btnP" onclick="salvarPaciente()">Registrar na Planilha</button>
     </div></div>
   </div>
 
-  <!-- LISTA PACIENTES -->
+  <!-- ═══ LISTA PACIENTES ═══ -->
   <div id="lstPac" class="tela">
     <div class="topbar"><span>📋</span><h2>Pacientes</h2><div class="sp"></div>
-      <button class="refresh-btn" onclick="verPacientes()">↻ Atualizar</button>
+      <button class="btn-icon" onclick="verPacientes()" title="Atualizar">↻</button>
       <button class="btn-back" onclick="ir('menu')">← Voltar</button>
     </div>
+    <div class="sync-bar"><span class="dot-sync" id="syncDotP"></span><span id="syncTxtP">Sincronizado com Sheets</span></div>
     <div class="lbody" id="divPac"></div>
   </div>
 
-  <!-- LISTA DOADORES -->
+  <!-- ═══ LISTA DOADORES ═══ -->
   <div id="lstDoad" class="tela">
     <div class="topbar"><span>👥</span><h2>Doadores disponíveis</h2><div class="sp"></div>
-      <button class="refresh-btn" onclick="verDoadores()">↻ Atualizar</button>
+      <button class="btn-icon" onclick="verDoadores()" title="Atualizar">↻</button>
       <button class="btn-back" onclick="ir('menu')">← Voltar</button>
     </div>
+    <div class="sync-bar"><span class="dot-sync" id="syncDotD"></span><span id="syncTxtD">Sincronizado com Sheets</span></div>
     <div class="lbody" id="divDoad"></div>
   </div>
 
-  <!-- CHAT -->
+  <!-- ═══ CHAT ═══ -->
   <div id="chatTela" class="tela">
     <div class="ctop">
       <div class="cav">💬</div>
@@ -323,7 +285,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
       </div>
       <button class="btn-back" onclick="sairChat()">✕</button>
     </div>
-    <div class="pbar">🔒 Chat anônimo · Histórico salvo no Google Sheets</div>
+    <div class="pbar">🔒 Chat anônimo · Histórico salvo automaticamente no Sheets</div>
     <div class="cmsgs" id="cmsgs">
       <div class="typi" id="typi"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     </div>
@@ -333,14 +295,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
       <button class="sbtn" onclick="enviar()">➤</button>
     </div>
   </div>
-</div>
+
+</div><!-- /app -->
 
 <!-- MODAL DOADOR -->
 <div class="ov" id="modD">
   <div class="modal">
-    <h3>🎉 Cadastrado no Sheets!</h3><p>Código de chat anônimo:</p>
+    <h3>🎉 Salvo no Sheets!</h3><p>Código de chat anônimo:</p>
     <div class="mcode" id="mCodD">——</div>
-    <div class="mhint">Cadastro salvo na planilha Google Sheets. Compartilhe o código para receber contato anônimo.</div>
+    <div class="mhint">Cadastro gravado na planilha Google Sheets. Compartilhe o código para receber contato anônimo sem revelar seus dados.</div>
     <button class="cbtn" onclick="copiar('mCodD')">📋 Copiar código</button>
     <button class="btn-p" onclick="fecharMod('modD')">Entendido!</button>
   </div>
@@ -349,229 +312,263 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 <!-- MODAL PACIENTE -->
 <div class="ov" id="modP">
   <div class="modal">
-    <h3>✅ Registrado no Sheets!</h3><p>Código de contato anônimo:</p>
+    <h3>✅ Salvo no Sheets!</h3><p>Código de contato anônimo:</p>
     <div class="mcode" id="mCodP">——</div>
-    <div class="mhint">Registro salvo na planilha. Doadores compatíveis podem entrar no chat com este código.</div>
+    <div class="mhint">Registro gravado na planilha. Doadores compatíveis podem entrar no chat com este código.</div>
     <button class="cbtn" onclick="copiar('mCodP')">📋 Copiar código</button>
     <button class="btn-p" onclick="fecharMod('modP')">Entendido!</button>
+  </div>
+</div>
+
+<!-- MODAL MARCAR COMO ATENDIDO -->
+<div class="ov" id="modAtendido">
+  <div class="modal">
+    <h3>✅ Marcar como atendido?</h3>
+    <p>O paciente já conseguiu doadores?</p>
+    <p style="font-size:.9rem;font-weight:500;margin:12px 0" id="atendidoNome"></p>
+    <div class="mhint">Isso vai alterar o status na planilha para "atendido" e remover da lista.</div>
+    <button class="btn-p" style="margin-bottom:8px" onclick="confirmarAtendido()">✅ Sim, foi atendido</button>
+    <button class="cbtn" style="width:100%" onclick="fecharMod('modAtendido')">Cancelar</button>
   </div>
 </div>
 
 <div id="toast"></div>
 
 <script>
-/* ══ TEMA ══ */
+// ═══════════════════════════════════════════════════════════════
+//  CONFIGURAÇÃO — URL do seu Apps Script
+// ═══════════════════════════════════════════════════════════════
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5lhZ2eBFzPCAcRvTwBN-YkaPJ1zrQnLXaq7OJp0RjPjLdxLMom8lLIqA7A1-3CFPS/exec';
+const SHEET_LINK = 'https://docs.google.com/spreadsheets/d/1C0dmmsMHo-WNqHfKUxTckBpeYP7_Za_kC2e_r29qFpI/edit';
+
+// ═══════════════════════════════════════════════════════════════
+//  TEMA
+// ═══════════════════════════════════════════════════════════════
 let tema = localStorage.getItem('tema') || 'dark';
 document.documentElement.setAttribute('data-theme', tema);
 function toggleTheme(){ tema=tema==='dark'?'light':'dark'; localStorage.setItem('tema',tema); document.documentElement.setAttribute('data-theme',tema); }
 
-/* ══ CONFIG ══ */
-function getCfg(){ try{ return JSON.parse(localStorage.getItem('appsCfg')); }catch{ return null; } }
-function getUrl(){ const c=getCfg(); return c?c.url:null; }
-
-function abrirSetup(){
-  const c=getCfg();
-  if(c) document.getElementById('c_url').value=c.url||'';
-  document.getElementById('setupTela').classList.add('open');
-}
-
-async function salvarConfig(){
-  const url=document.getElementById('c_url').value.trim();
-  if(!url||!url.startsWith('https://script.google.com')) return toast('⚠️ Cole a URL do Apps Script corretamente');
-  const btn=document.getElementById('btnConectar');
-  btn.disabled=true; btn.textContent='⏳ Testando conexão...';
-
-  const status=document.getElementById('connStatus');
-  status.style.display='flex'; status.innerHTML='⏳ Testando conexão com o Sheets...';
-
-  try{
-    const res=await api(url,'ping');
-    if(res.ok){
-      localStorage.setItem('appsCfg', JSON.stringify({url}));
-      status.innerHTML='✅ Conectado com sucesso!';
-      toast('✅ Conectado ao Google Sheets!');
-      setTimeout(()=>{ document.getElementById('setupTela').classList.remove('open'); ir('menu'); atualizarStatusConn(); }, 1200);
+// ═══════════════════════════════════════════════════════════════
+//  API — chama o Apps Script
+// ═══════════════════════════════════════════════════════════════
+async function api(action, body={}) {
+  const isRead = ['ping','listarDoadores','listarPacientes','listarMsgs','sincronizar','setup'].includes(action);
+  try {
+    let resp;
+    if (isRead) {
+      const qs = Object.entries(body).map(([k,v])=>`${k}=${encodeURIComponent(v)}`).join('&');
+      resp = await fetch(`${SCRIPT_URL}?action=${action}${qs?'&'+qs:''}`, { redirect: 'follow' });
     } else {
-      status.innerHTML='❌ Erro: '+(res.erro||'Resposta inválida');
-      toast('❌ Falha na conexão');
+      resp = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        redirect: 'follow',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action, ...body })
+      });
     }
-  }catch(e){
-    status.innerHTML='❌ Não foi possível conectar. Verifique a URL e as permissões do deployment.';
-    toast('❌ Erro de conexão');
+    const data = await resp.json();
+    return data;
+  } catch(e) {
+    return { ok: false, erro: e.message };
   }
-  btn.disabled=false; btn.textContent='🔗 Conectar e testar';
 }
 
-/* ══ API CALL ══ */
-async function api(urlBase, action, body={}){
-  const url = urlBase || getUrl();
-  if(!url) throw new Error('URL não configurada');
-  const fullUrl = url + '?action=' + action;
-  // Apps Script requer GET para leitura, POST para escrita
-  const isRead = ['ping','listarDoadores','listarPacientes','listarMsgs'].includes(action);
-  let resp;
-  if(isRead){
-    const qs = Object.keys(body).map(k=>`${k}=${encodeURIComponent(body[k])}`).join('&');
-    resp = await fetch(fullUrl + (qs?'&'+qs:''), {redirect:'follow'});
-  } else {
-    resp = await fetch(url, {
-      method:'POST', redirect:'follow',
-      headers:{'Content-Type':'text/plain'},
-      body: JSON.stringify({action,...body})
-    });
-  }
-  return resp.json();
-}
-
-/* ══ SPLASH + INIT ══ */
+// ═══════════════════════════════════════════════════════════════
+//  SPLASH + INIT
+// ═══════════════════════════════════════════════════════════════
 setTimeout(() => {
   document.getElementById('splash').classList.add('out');
-  setTimeout(() => {
+  setTimeout(async () => {
     document.getElementById('splash').remove();
-    const cfg=getCfg();
-    if(!cfg||!cfg.url){ document.getElementById('setupTela').classList.add('open'); }
-    else { ir('menu'); atualizarStatusConn(); }
+    ir('menu');
+    await inicializar();
   }, 650);
 }, 2400);
 
-async function atualizarStatusConn(){
-  const dot=document.getElementById('heroConnDot');
-  const txt=document.getElementById('heroConnTxt');
-  dot.className='conn-dot loading'; txt.textContent='Verificando...';
-  try{
-    const res=await api(null,'ping');
-    if(res.ok){ dot.className='conn-dot ok'; txt.textContent='Sheets conectado ✓'; }
-    else { dot.className='conn-dot err'; txt.textContent='Erro no Sheets'; }
-  }catch{
-    dot.className='conn-dot err'; txt.textContent='Sem conexão';
+async function inicializar() {
+  setConn('spin','Configurando planilha...');
+  // Setup cria as abas se não existirem
+  const r = await api('setup');
+  if (r.ok) {
+    setConn('ok','Sheets conectado ✓ · ' + new Date().toLocaleTimeString('pt-br',{hour:'2-digit',minute:'2-digit'}));
+  } else {
+    setConn('err','Erro de conexão — verifique o script');
+    toast('❌ Erro: ' + (r.erro||'Verifique o Apps Script'));
   }
 }
 
-/* ══ HELPERS ══ */
+async function testarConn() {
+  setConn('spin','Testando...');
+  const r = await api('ping');
+  if (r.ok) { setConn('ok','Conectado ✓'); toast('✅ '+r.msg); }
+  else       { setConn('err','Sem conexão'); toast('❌ '+(r.erro||'Falha')); }
+}
+
+function setConn(state, txt) {
+  const d=document.getElementById('heroDot'), l=document.getElementById('heroTxt');
+  if(d) d.className='cdot '+state;
+  if(l) l.textContent=txt;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════════════════════
 function ir(id){ document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa')); document.getElementById(id)?.classList.add('ativa'); window.scrollTo(0,0); }
-function toast(m){ const e=document.getElementById('toast'); e.textContent=m; e.classList.add('show'); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('show'),3000); }
+function toast(m,dur=3000){ const e=document.getElementById('toast'); e.textContent=m; e.classList.add('show'); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('show'),dur); }
 function copiar(id){ const t=document.getElementById(id).textContent.trim(); navigator.clipboard?.writeText(t).then(()=>toast('✅ Copiado!')).catch(()=>toast('Código: '+t)); }
 function agora(){ return new Date().toLocaleTimeString('pt-br',{hour:'2-digit',minute:'2-digit'}); }
 function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); }
 function limpar(ids){ ids.forEach(id=>{ const e=document.getElementById(id); if(e) e.value=''; }); }
-function fecharMod(id){ document.getElementById(id).classList.remove('open'); ir('menu'); }
-function setBusy(id,busy,label){ const b=document.getElementById(id); if(!b)return; b.disabled=busy; b.textContent=busy?'⏳ Salvando...':label; }
-function noConn(){ toast('⚠️ Configure a conexão com o Sheets primeiro (⚙️)'); }
+function fecharMod(id){ document.getElementById(id).classList.remove('open'); }
+function setBusy(id,busy,label){ const b=document.getElementById(id); if(!b)return; b.disabled=busy; b.textContent=busy?'⏳ Salvando na planilha...':label; }
+function setSyncBar(dotId,txtId,state,txt){ const d=document.getElementById(dotId),l=document.getElementById(txtId); if(d) d.className='dot-sync'+(state==='syncing'?' syncing':''); if(l) l.textContent=txt; }
 
-/* ══ CADASTRO DOADOR ══ */
+// ═══════════════════════════════════════════════════════════════
+//  CADASTRO DOADOR
+// ═══════════════════════════════════════════════════════════════
 async function salvarDoador(){
   const nome=document.getElementById('d_nome').value.trim();
   const tipo=document.getElementById('d_tipo').value;
   if(!nome) return toast('⚠️ Preencha o nome');
   if(!tipo) return toast('⚠️ Selecione o tipo sanguíneo');
-  if(!getUrl()) return noConn();
-  setBusy('btnD',true,'Cadastrar');
-  try{
-    const res=await api(null,'addDoador',{
-      nome, tipo,
-      data:document.getElementById('d_data').value,
-      cidade:document.getElementById('d_cidade').value.trim(),
-      estado:document.getElementById('d_estado').value.trim().toUpperCase(),
-      apto:document.getElementById('d_apto').value
-    });
-    if(!res.ok) throw new Error(res.erro||'Erro desconhecido');
-    document.getElementById('mCodD').textContent=res.codigo;
+  setBusy('btnD',true,'Cadastrar na Planilha');
+  const r=await api('addDoador',{
+    nome, tipo,
+    data:   document.getElementById('d_data').value,
+    cidade: document.getElementById('d_cidade').value.trim(),
+    estado: document.getElementById('d_estado').value.trim().toUpperCase(),
+    apto:   document.getElementById('d_apto').value
+  });
+  if(r.ok){
+    document.getElementById('mCodD').textContent=r.codigo;
     document.getElementById('modD').classList.add('open');
     limpar(['d_nome','d_data','d_cidade','d_estado']);
     document.getElementById('d_tipo').value='';
     document.getElementById('d_apto').value='sim';
-  }catch(e){ toast('❌ '+e.message); }
-  setBusy('btnD',false,'Cadastrar');
+  } else toast('❌ Erro: '+(r.erro||'Falha ao salvar'));
+  setBusy('btnD',false,'Cadastrar na Planilha');
 }
 
-/* ══ CADASTRO PACIENTE ══ */
+// ═══════════════════════════════════════════════════════════════
+//  CADASTRO PACIENTE
+// ═══════════════════════════════════════════════════════════════
 async function salvarPaciente(){
   const nome=document.getElementById('p_nome').value.trim();
   const hosp=document.getElementById('p_hosp').value.trim();
   if(!nome) return toast('⚠️ Preencha o nome do paciente');
   if(!hosp) return toast('⚠️ Preencha o hospital');
-  if(!getUrl()) return noConn();
-  setBusy('btnP',true,'Registrar');
-  try{
-    const res=await api(null,'addPaciente',{
-      nome, hospital:hosp,
-      registro:document.getElementById('p_reg').value.trim(),
-      tipo:document.getElementById('p_tipo').value,
-      qtd:document.getElementById('p_qtd').value,
-      obs:document.getElementById('p_obs').value.trim()
-    });
-    if(!res.ok) throw new Error(res.erro||'Erro desconhecido');
-    document.getElementById('mCodP').textContent=res.codigo;
+  setBusy('btnP',true,'Registrar na Planilha');
+  const r=await api('addPaciente',{
+    nome, hospital:hosp,
+    registro: document.getElementById('p_reg').value.trim(),
+    tipo:     document.getElementById('p_tipo').value,
+    qtd:      document.getElementById('p_qtd').value,
+    obs:      document.getElementById('p_obs').value.trim()
+  });
+  if(r.ok){
+    document.getElementById('mCodP').textContent=r.codigo;
     document.getElementById('modP').classList.add('open');
     limpar(['p_nome','p_hosp','p_reg','p_qtd','p_obs']);
     document.getElementById('p_tipo').value='';
-  }catch(e){ toast('❌ '+e.message); }
-  setBusy('btnP',false,'Registrar');
+  } else toast('❌ Erro: '+(r.erro||'Falha ao salvar'));
+  setBusy('btnP',false,'Registrar na Planilha');
 }
 
-/* ══ LISTAS ══ */
+// ═══════════════════════════════════════════════════════════════
+//  LISTAS — buscam direto do Sheets
+// ═══════════════════════════════════════════════════════════════
 async function verPacientes(){
   ir('lstPac');
   const div=document.getElementById('divPac');
-  if(!getUrl()){ div.innerHTML='<div class="empty">⚠️ Configure o Sheets primeiro.<br><a onclick="abrirSetup()">Clique aqui ⚙️</a></div>'; return; }
-  div.innerHTML='<div class="loading"><div class="spinner"></div><br>Buscando no Sheets...</div>';
-  try{
-    const res=await api(null,'listarPacientes');
-    div.innerHTML='';
-    if(!res.ok) throw new Error(res.erro);
-    if(!res.lista.length){ div.innerHTML='<div class="empty">Nenhum paciente cadastrado ainda.<br>Qualquer celular pode registrar aqui.</div>'; return; }
-    res.lista.forEach(p=>{
-      const el=document.createElement('div'); el.className='item';
-      el.innerHTML=`${p.tipo?`<span class="badge">${p.tipo}</span>`:''}
-        <h3>${esc(p.nome)}</h3>
-        <div class="meta">🏥 ${esc(p.hospital)}${p.qtd?`<br>👥 ${p.qtd} doador(es)`:''}${p.obs?`<br>📝 ${esc(p.obs)}`:''}</div>
-        <div class="code-line"><span style="font-size:.68rem;color:var(--muted)">Código chat</span><span class="code-val">${p.codigo}</span></div>
-        <div class="actions">
-          <button class="btn-s bc" onclick="iniciarChat('${p.codigo}','${esc(p.nome)}','paciente')">💬 Chat anônimo</button>
-          <button class="btn-s bd" onclick="remover('pacientes','${p.id}')">🗑</button>
-        </div>`;
-      div.appendChild(el);
-    });
-  }catch(e){ div.innerHTML=`<div class="empty">❌ Erro: ${e.message}<br><small>Verifique a conexão com o Sheets</small></div>`; }
+  setSyncBar('syncDotP','syncTxtP','syncing','Buscando no Sheets...');
+  div.innerHTML='<div class="loading"><div class="spinner"></div><br>Carregando da planilha...</div>';
+  const r=await api('listarPacientes');
+  div.innerHTML='';
+  if(!r.ok){ div.innerHTML=`<div class="empty">❌ ${r.erro||'Erro de conexão'}<br><small>Verifique o Apps Script</small></div>`; setSyncBar('syncDotP','syncTxtP','','Erro'); return; }
+  setSyncBar('syncDotP','syncTxtP','','Sincronizado · '+agora());
+  if(!r.lista.length){ div.innerHTML='<div class="empty">Nenhum paciente cadastrado ainda.<br>Qualquer celular pode registrar aqui e aparece na planilha automaticamente.</div>'; return; }
+  r.lista.forEach(p => div.appendChild(criarCardPaciente(p)));
+}
+
+function criarCardPaciente(p){
+  const el=document.createElement('div'); el.className='item';
+  el.innerHTML=`
+    ${p.tipo?`<span class="badge">${p.tipo}</span>`:''}
+    <h3>${esc(p.nome)}</h3>
+    <div class="meta">
+      🏥 ${esc(p.hospital)}
+      ${p.qtd?`<br>👥 ${p.qtd} doador(es) necessário(s)`:''}
+      ${p.obs?`<br>📝 ${esc(p.obs)}`:''}
+      ${p.cadastro?`<br>📅 ${p.cadastro}`:''}
+    </div>
+    <div class="code-line">
+      <span style="font-size:.68rem;color:var(--muted)">Código chat</span>
+      <span class="code-val">${p.codigo}</span>
+    </div>
+    <div class="actions">
+      <button class="btn-s bc" onclick="iniciarChat('${p.codigo}','${esc(p.nome)}','paciente')">💬 Chat</button>
+      <button class="btn-s bg" onclick="pedirAtendido('${p.id}','${esc(p.nome)}')">✅ Atendido</button>
+      <button class="btn-s bd" onclick="remover('pacientes','${p.id}')">🗑</button>
+    </div>`;
+  return el;
 }
 
 async function verDoadores(){
   ir('lstDoad');
   const div=document.getElementById('divDoad');
-  if(!getUrl()){ div.innerHTML='<div class="empty">⚠️ Configure o Sheets primeiro.<br><a onclick="abrirSetup()">Clique aqui ⚙️</a></div>'; return; }
-  div.innerHTML='<div class="loading"><div class="spinner"></div><br>Buscando no Sheets...</div>';
-  try{
-    const res=await api(null,'listarDoadores');
-    div.innerHTML='';
-    if(!res.ok) throw new Error(res.erro);
-    if(!res.lista.length){ div.innerHTML='<div class="empty">Nenhum doador disponível no momento.<br>Doadores aguardam 90 dias entre doações.</div>'; return; }
-    res.lista.forEach(p=>{
-      const el=document.createElement('div'); el.className='item';
-      el.innerHTML=`${p.tipo?`<span class="badge">${p.tipo}</span>`:''}
-        <h3>${esc(p.nome)}</h3>
-        <div class="meta">📍 ${esc(p.cidade||'—')}${p.estado?', '+p.estado:''}</div>
-        <div class="code-line"><span style="font-size:.68rem;color:var(--muted)">Código chat</span><span class="code-val">${p.codigo}</span></div>
-        <div class="actions">
-          <button class="btn-s bc" onclick="iniciarChat('${p.codigo}','${esc(p.nome)}','doador')">💬 Chat anônimo</button>
-          <button class="btn-s bd" onclick="remover('doadores','${p.id}')">🗑</button>
-        </div>`;
-      div.appendChild(el);
-    });
-  }catch(e){ div.innerHTML=`<div class="empty">❌ Erro: ${e.message}</div>`; }
+  setSyncBar('syncDotD','syncTxtD','syncing','Buscando no Sheets...');
+  div.innerHTML='<div class="loading"><div class="spinner"></div><br>Carregando da planilha...</div>';
+  const r=await api('listarDoadores');
+  div.innerHTML='';
+  if(!r.ok){ div.innerHTML=`<div class="empty">❌ ${r.erro||'Erro de conexão'}</div>`; setSyncBar('syncDotD','syncTxtD','','Erro'); return; }
+  setSyncBar('syncDotD','syncTxtD','','Sincronizado · '+agora());
+  if(!r.lista.length){ div.innerHTML='<div class="empty">Nenhum doador disponível.<br>Doadores aguardam 90 dias entre doações.</div>'; return; }
+  r.lista.forEach(p=>{
+    const el=document.createElement('div'); el.className='item';
+    el.innerHTML=`
+      ${p.tipo?`<span class="badge">${p.tipo}</span>`:''}
+      <h3>${esc(p.nome)}</h3>
+      <div class="meta">📍 ${esc(p.cidade||'—')}${p.estado?', '+p.estado:''}${p.cadastro?`<br>📅 ${p.cadastro}`:''}</div>
+      <div class="code-line">
+        <span style="font-size:.68rem;color:var(--muted)">Código chat</span>
+        <span class="code-val">${p.codigo}</span>
+      </div>
+      <div class="actions">
+        <button class="btn-s bc" onclick="iniciarChat('${p.codigo}','${esc(p.nome)}','doador')">💬 Chat</button>
+        <button class="btn-s bd" onclick="remover('doadores','${p.id}')">🗑</button>
+      </div>`;
+    div.appendChild(el);
+  });
 }
 
 async function remover(col,id){
   if(!confirm('Remover este registro da planilha?')) return;
-  try{
-    const res=await api(null,'deletar',{colecao:col, id});
-    if(res.ok){ toast('🗑 Removido da planilha'); col==='pacientes'?verPacientes():verDoadores(); }
-    else toast('❌ '+res.erro);
-  }catch(e){ toast('❌ '+e.message); }
+  toast('⏳ Removendo...'); 
+  const r=await api('deletar',{colecao:col,id});
+  if(r.ok){ toast('🗑 Removido da planilha!'); col==='pacientes'?verPacientes():verDoadores(); }
+  else toast('❌ '+(r.erro||'Erro ao remover'));
 }
 
-/* ══ CHAT (polling no Sheets) ══ */
-let chatCod=null, chatPollInt=null, lastMsgCount=0;
-const meuNick='Usuário_'+Math.random().toString(36).slice(2,5).toUpperCase();
+// ── Marcar como atendido ─────────────────────────────────────
+let _atendidoId=null;
+function pedirAtendido(id,nome){
+  _atendidoId=id;
+  document.getElementById('atendidoNome').textContent='Paciente: '+nome;
+  document.getElementById('modAtendido').classList.add('open');
+}
+async function confirmarAtendido(){
+  fecharMod('modAtendido');
+  toast('⏳ Atualizando planilha...');
+  const r=await api('atualizarStatus',{colecao:'pacientes',id:_atendidoId,novoStatus:'atendido'});
+  if(r.ok){ toast('✅ Status atualizado no Sheets!'); verPacientes(); }
+  else toast('❌ '+(r.erro||'Erro'));
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  CHAT — polling no Sheets
+// ═══════════════════════════════════════════════════════════════
+let chatCod=null, chatPoll=null, lastCount=0;
+const meuNick='User_'+Math.random().toString(36).slice(2,5).toUpperCase();
 
 function entrarChat(){
   const c=document.getElementById('codeInput').value.trim().toUpperCase();
@@ -580,48 +577,38 @@ function entrarChat(){
 }
 
 function iniciarChat(cod,nome,tipo){
-  chatCod=cod.toUpperCase(); lastMsgCount=0;
+  chatCod=cod.toUpperCase(); lastCount=0;
   document.getElementById('chatNome').textContent=(tipo==='paciente'?'🏥 ':tipo==='doador'?'🩸 ':'💬 ')+nome;
   document.getElementById('cmsgs').innerHTML='<div class="typi" id="typi"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
   ir('chatTela');
-  if(!getUrl()){ setS('offline','Configure o Sheets ⚙️'); addSys('⚠️ Conecte ao Sheets primeiro.'); return; }
-  setS('connecting','Carregando mensagens...');
-  carregarMsgs(true);
-  if(chatPollInt) clearInterval(chatPollInt);
-  chatPollInt=setInterval(()=>carregarMsgs(false), 4000); // poll a cada 4s
-  addSys('💬 Sala: '+chatCod+' · Compartilhe o código para a outra parte entrar');
+  setS('connecting','Carregando histórico...');
+  buscarMsgs(true);
+  if(chatPoll) clearInterval(chatPoll);
+  chatPoll=setInterval(()=>buscarMsgs(false),5000);
+  addSys('💬 Sala: '+chatCod+' · Histórico salvo no Sheets');
 }
 
-async function carregarMsgs(inicial){
+async function buscarMsgs(inicial){
   if(!chatCod) return;
-  try{
-    const res=await api(null,'listarMsgs',{sala:chatCod});
-    if(!res.ok) throw new Error(res.erro);
-    setS('online','Conectado · '+chatCod);
-    if(res.msgs.length===lastMsgCount) return; // nada novo
-    // renderiza só novas mensagens
-    const novas=res.msgs.slice(lastMsgCount);
-    novas.forEach(m=> addBub(m.texto, m.de===meuNick, m.hora));
-    lastMsgCount=res.msgs.length;
-    scrollB();
-  }catch(e){
-    setS('offline','Sem conexão');
-  }
+  const r=await api('listarMsgs',{sala:chatCod});
+  if(!r.ok){ setS('offline','Sem conexão'); return; }
+  setS('online','Conectado · '+chatCod);
+  const novas=r.msgs.slice(lastCount);
+  novas.forEach(m=>addBub(m.texto,m.de===meuNick,m.hora));
+  if(novas.length>0) scrollB();
+  lastCount=r.msgs.length;
 }
 
 async function enviar(){
   const input=document.getElementById('msgIn'), txt=input.value.trim();
-  if(!txt||!chatCod||!getUrl()) return;
+  if(!txt||!chatCod) return;
   input.value='';
-  // Mostra imediatamente (otimista)
-  addBub(txt, true, agora()); scrollB(); lastMsgCount++;
-  try{
-    await api(null,'enviarMsg',{sala:chatCod, de:meuNick, texto:txt, hora:agora()});
-  }catch(e){ toast('❌ Falha ao enviar'); }
+  addBub(txt,true,agora()); scrollB(); lastCount++;
+  await api('enviarMsg',{sala:chatCod,de:meuNick,texto:txt,hora:agora()});
 }
 
 function sairChat(){
-  if(chatPollInt){ clearInterval(chatPollInt); chatPollInt=null; }
+  if(chatPoll){ clearInterval(chatPoll); chatPoll=null; }
   chatCod=null; ir('menu');
 }
 
