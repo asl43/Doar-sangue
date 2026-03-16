@@ -219,10 +219,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
       </div>
       <h1>Banco de<br>Doadores</h1>
       <p>Doe sangue · Salve vidas</p>
-      <div class="hero-tag">
-        <span class="cdot spin" id="heroDot"></span>
-        <span id="heroTxt">Verificando...</span>
-      </div>
     </div>
 
     <!-- Meu código (se cadastrado) -->
@@ -519,7 +515,7 @@ function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')
 function limpar(ids){ ids.forEach(id=>{ const e=document.getElementById(id); if(e) e.value=''; }); }
 function fecharMod(id){ document.getElementById(id).classList.remove('open'); }
 function setBusy(id,busy,label){ const b=document.getElementById(id); if(!b)return; b.disabled=busy; b.textContent=busy?'⏳ Salvando...':label; }
-function setConn(state,txt){ const d=document.getElementById('heroDot'),l=document.getElementById('heroTxt'); if(d) d.className='cdot '+state; if(l) l.textContent=txt; }
+function setConn(state,txt){ /* removido */ }
 
 // ══════════════════════════════════════════════════════
 //  SAIR
