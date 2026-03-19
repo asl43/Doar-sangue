@@ -25,7 +25,6 @@
 html,body{height:100%;overflow:hidden}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;transition:background var(--tr),color var(--tr)}
 
-/* SPLASH */
 #splash{position:fixed;inset:0;z-index:999;background:radial-gradient(ellipse at 50% 40%,#5a0000,#060000 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .6s,transform .6s}
 #splash.out{opacity:0;transform:scale(1.04);pointer-events:none}
 .drop{font-size:86px;animation:beat 1.3s infinite;filter:drop-shadow(0 0 40px #c4000088)}
@@ -36,13 +35,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .sfill{height:100%;background:#ff5555;animation:sf 2.4s ease forwards}
 @keyframes sf{from{width:0}to{width:100%}}
 
-/* APP */
 #app{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .tela{display:none;flex:1;flex-direction:column;overflow:hidden;animation:fup .22s ease}
 .tela.ativa{display:flex}
 @keyframes fup{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
-/* TOPBAR */
 .topbar{flex-shrink:0;background:var(--s1);border-bottom:1px solid var(--bord);padding:13px 15px;display:flex;align-items:center;gap:10px;transition:background var(--tr),border-color var(--tr)}
 .topbar h2{font-family:'Playfair Display',serif;font-size:1rem;color:var(--red-l)}
 .topbar .sp{flex:1}
@@ -51,7 +48,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .btn-icon{background:none;border:1px solid var(--bord);color:var(--muted);padding:5px 9px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}
 .btn-icon:hover{border-color:var(--red);color:var(--red-l)}
 
-/* MENU */
 #menu{overflow-y:auto}
 .hero{background:var(--hero);padding:46px 20px 30px;text-align:center;position:relative;overflow:hidden;flex-shrink:0}
 .hero::after{content:'🩸';position:absolute;font-size:200px;opacity:.04;right:-30px;top:-30px;pointer-events:none}
@@ -62,14 +58,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .hbtn.sair:hover{background:rgba(239,68,68,.35)}
 .hero h1{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;line-height:1.1}
 .hero p{color:rgba(255,255,255,.45);margin-top:7px;font-size:.86rem}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:4px 12px;font-size:.7rem;color:rgba(255,255,255,.5);margin-top:12px}
-.cdot{width:7px;height:7px;border-radius:50%;background:#444;flex-shrink:0;transition:background .3s}
-.cdot.ok{background:#22c55e}
-.cdot.err{background:#ef4444}
-.cdot.spin{background:#f59e0b;animation:blink .8s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* MEU CÓDIGO BADGE */
 .meu-codigo-bar{max-width:480px;margin:0 auto;width:100%;padding:0 16px 4px}
 .meu-codigo-card{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:12px 15px;display:flex;align-items:center;gap:10px;transition:background var(--tr),border-color var(--tr)}
 .meu-codigo-card .label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
@@ -79,7 +68,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .pdot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0}
 .pdot.off{background:#666}
 
-/* GRID */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:16px;max-width:480px;margin:0 auto;width:100%}
 .gcard{background:var(--s1);border:1px solid var(--bord);border-radius:15px;padding:19px 12px;text-align:center;cursor:pointer;transition:all .2s;user-select:none}
 .gcard:active{transform:scale(.95)}
@@ -87,7 +75,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .gcard .gi{font-size:30px;margin-bottom:8px}
 .gcard .gl{font-size:.78rem;font-weight:500;line-height:1.3}
 
-/* CHAT ENTRY */
 .entry-sect{padding:0 16px 22px;max-width:480px;margin:0 auto;width:100%}
 .ebox{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:15px;transition:background var(--tr),border-color var(--tr)}
 .ebox h3{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
@@ -98,7 +85,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .erow button{background:var(--red);color:#fff;border:none;border-radius:9px;padding:9px 13px;cursor:pointer;font-size:.86rem;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:background .2s}
 .erow button:hover{background:var(--red-d)}
 
-/* FORM */
 .sbody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .fwrap{max-width:480px;margin:0 auto;padding:16px 16px 40px}
 .field{margin-bottom:11px}
@@ -107,16 +93,43 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red)}
 .field select option{background:var(--s2);color:var(--text)}
 .field textarea{resize:vertical;min-height:68px}
+.field-hint{font-size:.68rem;color:var(--muted);margin-top:4px;line-height:1.4}
 .btn-p{width:100%;padding:12px;background:var(--red);color:#fff;border:none;border-radius:9px;font-size:.94rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;margin-top:5px}
 .btn-p:hover{background:var(--red-d)}
 .btn-p:active{transform:scale(.98)}
 .btn-p:disabled{background:#555;cursor:not-allowed}
 
+/* FOTO */
+.foto-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:16px}
+.foto-circle{width:90px;height:90px;border-radius:50%;border:2px dashed var(--bord);background:var(--s2);display:flex;align-items:center;justify-content:center;font-size:32px;overflow:hidden;cursor:pointer;position:relative;transition:border-color .2s}
+.foto-circle:hover{border-color:var(--red)}
+.foto-circle img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.foto-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;border-radius:50%;font-size:20px}
+.foto-circle:hover .foto-overlay{display:flex}
+.foto-hint{font-size:.7rem;color:var(--muted)}
+input.foto-input{display:none}
+
+/* DOAÇÕES MANUAIS */
+.sec-titulo{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.sec-titulo::after{content:'';flex:1;height:1px;background:var(--bord)}
+.doacoes-lista{display:flex;flex-direction:column;gap:7px;margin-bottom:8px}
+.doacao-item{background:var(--s2);border:1px solid var(--bord);border-radius:9px;padding:9px 12px;display:flex;align-items:center;gap:8px;font-size:.82rem}
+.doacao-item .di-rem{margin-left:auto;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.9rem;padding:2px 6px;border-radius:5px;transition:color .2s}
+.doacao-item .di-rem:hover{color:#ef4444}
+.btn-add-doacao{width:100%;padding:9px;background:none;border:1px dashed var(--bord);border-radius:9px;color:var(--muted);cursor:pointer;font-size:.82rem;font-family:'DM Sans',sans-serif;transition:all .2s;margin-bottom:10px}
+.btn-add-doacao:hover{border-color:var(--red);color:var(--red-l)}
+
+/* PRAZO BADGE */
+.prazo-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:.67rem;font-weight:500;margin-top:3px}
+.prazo-badge.ok{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.25)}
+.prazo-badge.warn{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.25)}
+.prazo-badge.exp{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.25)}
+
 /* LISTS */
 .lbody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:13px;display:flex;flex-direction:column;gap:10px}
 .item{background:var(--s1);border:1px solid var(--bord);border-radius:13px;padding:14px;box-shadow:var(--sh);transition:background var(--tr),border-color var(--tr);animation:fup .2s ease}
-.item .badge{display:inline-block;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-bottom:6px}
-.item h3{font-size:.9rem;margin-bottom:4px}
+.item .badge{display:inline-block;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-bottom:4px}
+.item h3{font-size:.9rem;margin-bottom:3px}
 .item .meta{font-size:.75rem;color:var(--muted);line-height:1.9}
 .code-line{margin-top:8px;background:var(--s2);border-radius:7px;padding:7px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .code-val{font-family:monospace;font-size:1rem;letter-spacing:5px;color:var(--red-l);font-weight:700}
@@ -132,19 +145,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .spinner{display:inline-block;width:22px;height:22px;border:2px solid var(--bord);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin-bottom:8px}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+/* CARD COM AVATAR */
+.item-header{display:flex;align-items:flex-start;gap:11px;margin-bottom:8px}
+.item-avatar{width:52px;height:52px;border-radius:50%;background:var(--s2);border:2px solid var(--bord);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:22px}
+.item-avatar img{width:100%;height:100%;object-fit:cover}
+.item-info{flex:1;min-width:0}
+
+/* DOAÇÕES NO CARD */
+.doacoes-card{margin-top:7px;font-size:.72rem;color:var(--muted);background:var(--s2);border-radius:7px;padding:7px 10px;line-height:1.8}
+
 /* MODAIS */
-.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:200;align-items:center;justify-content:center;padding:16px}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:200;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
 .ov.open{display:flex}
 .modal{background:var(--s1);border:1px solid var(--bord);border-radius:18px;padding:24px 20px;max-width:340px;width:100%;text-align:center;animation:fup .25s ease;transition:background var(--tr),border-color var(--tr)}
 .modal h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:7px}
 .modal p{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:4px}
 .mcode{font-family:monospace;font-size:2.3rem;font-weight:700;color:var(--red-l);letter-spacing:8px;margin:13px 0}
-.mhint{background:rgba(196,0,0,.07);border:1px solid rgba(196,0,0,.18);border-radius:7px;padding:9px 12px;font-size:.72rem;color:var(--muted);line-height:1.5;margin-bottom:12px}
-.minfo{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:7px;padding:9px 12px;font-size:.72rem;color:#22c55e;line-height:1.5;margin-bottom:12px}
+.mhint{background:rgba(196,0,0,.07);border:1px solid rgba(196,0,0,.18);border-radius:7px;padding:9px 12px;font-size:.72rem;color:var(--muted);line-height:1.5;margin-bottom:12px;text-align:left}
+.minfo{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:7px;padding:9px 12px;font-size:.72rem;color:#22c55e;line-height:1.5;margin-bottom:12px;text-align:left}
 .cbtn{background:var(--s2);border:1px solid var(--bord);color:var(--text);padding:6px 14px;border-radius:7px;cursor:pointer;font-size:.78rem;margin-bottom:9px;font-family:'DM Sans',sans-serif;transition:all .2s}
 .cbtn:hover{border-color:var(--red);color:var(--red-l)}
-
-/* MODAL SAIR */
+.modal-left{text-align:left}
+.modal-left h3{text-align:center}
 .btn-sair-confirm{width:100%;padding:12px;background:#ef4444;color:#fff;border:none;border-radius:9px;font-size:.94rem;cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:8px;transition:background .2s}
 .btn-sair-confirm:hover{background:#dc2626}
 
@@ -158,10 +180,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .cinfo h3{font-size:.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cinfo .sub{font-size:.68rem;color:var(--muted);margin-top:2px}
 .cinfo .sub b{color:var(--text)}
-
-/* AVISO MENSAGEM ASSÍNCRONA */
 .async-bar{flex-shrink:0;background:rgba(245,158,11,.06);border-bottom:1px solid rgba(245,158,11,.15);padding:7px 14px;text-align:center;font-size:.7rem;color:#f59e0b;line-height:1.5}
-
 .cmsgs{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:13px 11px;display:flex;flex-direction:column;gap:6px;background:var(--bg);transition:background var(--tr)}
 .smsg{text-align:center;color:var(--muted);font-size:.68rem;background:var(--s1);border-radius:20px;padding:4px 12px;align-self:center;max-width:90%;transition:background var(--tr)}
 .bub{max-width:75%;padding:9px 13px;border-radius:14px;font-size:.85rem;line-height:1.5;animation:fup .2s ease}
@@ -174,14 +193,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:ty .9s infinite}
 .dot:nth-child(2){animation-delay:.15s}.dot:nth-child(3){animation-delay:.3s}
 @keyframes ty{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-
 .cbar{flex-shrink:0;background:var(--s1);border-top:1px solid var(--bord);padding:8px 10px;display:flex;gap:7px;align-items:center;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));transition:background var(--tr),border-color var(--tr)}
 .cbar input{flex:1;background:var(--s2);border:1px solid var(--bord);border-radius:21px;padding:8px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.85rem;transition:border .18s,background var(--tr),color var(--tr)}
 .cbar input:focus{outline:none;border-color:var(--red)}
 .sbtn{width:36px;height:36px;background:var(--red);border:none;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
 .sbtn:hover{background:var(--red-d)}.sbtn:active{transform:scale(.88)}
 
-/* TELA FECHADA */
 #telaFechada{position:fixed;inset:0;z-index:998;background:#000;display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px}
 #telaFechada.open{display:flex}
 #telaFechada p{color:#444;font-size:.9rem}
@@ -201,7 +218,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
   <div class="sbar"><div class="sfill"></div></div>
 </div>
 
-<!-- TELA FECHADA (após sair) -->
 <div id="telaFechada">
   <div style="font-size:60px">🩸</div>
   <p style="color:#666;font-size:.9rem">Sistema encerrado</p>
@@ -210,7 +226,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 
 <div id="app">
 
-  <!-- ═══ MENU ═══ -->
+  <!-- MENU -->
   <div id="menu" class="tela">
     <div class="hero">
       <div class="hero-btns">
@@ -221,7 +237,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
       <p>Doe sangue · Salve vidas</p>
     </div>
 
-    <!-- Meu código (se cadastrado) -->
     <div class="meu-codigo-bar" id="meuCodigoBar" style="display:none;padding-top:14px">
       <div class="meu-codigo-card">
         <div class="info">
@@ -254,41 +269,71 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
     </div>
   </div>
 
-  <!-- ═══ CAD DOADOR ═══ -->
+  <!-- CAD DOADOR -->
   <div id="cadDoador" class="tela">
     <div class="topbar"><span>🩸</span><h2>Cadastro de Doador</h2><div class="sp"></div><button class="btn-back" onclick="ir('menu')">← Voltar</button></div>
     <div class="sbody"><div class="fwrap">
+
+      <div class="foto-wrap">
+        <div class="foto-circle" id="d_foto_circle" onclick="document.getElementById('d_foto_input').click()">
+          <span id="d_foto_icon">📷</span>
+          <div class="foto-overlay">✏️</div>
+        </div>
+        <span class="foto-hint">Toque para adicionar foto (opcional)</span>
+        <input type="file" class="foto-input" id="d_foto_input" accept="image/*" onchange="previewFoto('d',this)">
+      </div>
+
       <div class="field"><label>Nome completo</label><input id="d_nome" placeholder="Seu nome"></div>
       <div class="field"><label>Tipo sanguíneo</label>
         <select id="d_tipo"><option value="">Selecione</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
       </div>
-      <div class="field"><label>Última doação</label><input id="d_data" type="date"></div>
       <div class="field"><label>Cidade</label><input id="d_cidade" placeholder="Sua cidade"></div>
       <div class="field"><label>Estado (UF)</label><input id="d_estado" placeholder="AM" maxlength="2"></div>
       <div class="field"><label>Disponibilidade</label>
         <select id="d_apto"><option value="sim">Apto a doar</option><option value="nao">Não apto no momento</option></select>
       </div>
+
+      <div class="sec-titulo">💉 Histórico de Doações</div>
+      <div class="doacoes-lista" id="d_doacoes_lista"></div>
+      <button class="btn-add-doacao" onclick="abrirModalDoacao()">+ Registrar doação realizada</button>
+
       <button class="btn-p" id="btnD" onclick="salvarDoador()">Cadastrar</button>
     </div></div>
   </div>
 
-  <!-- ═══ CAD PACIENTE ═══ -->
+  <!-- CAD PACIENTE -->
   <div id="cadPaciente" class="tela">
     <div class="topbar"><span>🏥</span><h2>Registrar Paciente</h2><div class="sp"></div><button class="btn-back" onclick="ir('menu')">← Voltar</button></div>
     <div class="sbody"><div class="fwrap">
+
+      <div class="foto-wrap">
+        <div class="foto-circle" id="p_foto_circle" onclick="document.getElementById('p_foto_input').click()">
+          <span id="p_foto_icon">📷</span>
+          <div class="foto-overlay">✏️</div>
+        </div>
+        <span class="foto-hint">Toque para adicionar foto (opcional)</span>
+        <input type="file" class="foto-input" id="p_foto_input" accept="image/*" onchange="previewFoto('p',this)">
+      </div>
+
       <div class="field"><label>Nome do paciente</label><input id="p_nome" placeholder="Nome completo"></div>
       <div class="field"><label>Hospital</label><input id="p_hosp" placeholder="Nome do hospital"></div>
-      <div class="field"><label>Nº de registro</label><input id="p_reg" placeholder="Prontuário (opcional)"></div>
+      <div class="field"><label>Endereço do hospital</label><input id="p_end" placeholder="Rua, nº, bairro, cidade..."></div>
+      <div class="field"><label>Nº de registro / Prontuário</label><input id="p_reg" placeholder="Opcional"></div>
       <div class="field"><label>Tipo sanguíneo necessário</label>
         <select id="p_tipo"><option value="">Qualquer tipo</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
       </div>
       <div class="field"><label>Doadores necessários</label><input id="p_qtd" type="number" placeholder="Quantidade" min="1"></div>
+      <div class="field">
+        <label>Precisa de doadores até (data limite)</label>
+        <input id="p_prazo" type="date">
+        <div class="field-hint">⏳ Se não informar, o registro será excluído automaticamente após 181 dias do cadastro.</div>
+      </div>
       <div class="field"><label>Observações</label><textarea id="p_obs" placeholder="Informações adicionais..."></textarea></div>
       <button class="btn-p" id="btnP" onclick="salvarPaciente()">Registrar</button>
     </div></div>
   </div>
 
-  <!-- ═══ LISTA PACIENTES ═══ -->
+  <!-- LISTA PACIENTES -->
   <div id="lstPac" class="tela">
     <div class="topbar"><span>📋</span><h2>Pacientes</h2><div class="sp"></div>
       <button class="btn-icon" onclick="verPacientes()">↻</button>
@@ -297,7 +342,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
     <div class="lbody" id="divPac"></div>
   </div>
 
-  <!-- ═══ LISTA DOADORES ═══ -->
+  <!-- LISTA DOADORES -->
   <div id="lstDoad" class="tela">
     <div class="topbar"><span>👥</span><h2>Doadores disponíveis</h2><div class="sp"></div>
       <button class="btn-icon" onclick="verDoadores()">↻</button>
@@ -306,22 +351,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
     <div class="lbody" id="divDoad"></div>
   </div>
 
-  <!-- ═══ CHAT ═══ -->
+  <!-- CHAT -->
   <div id="chatTela" class="tela">
     <div class="ctop">
-      <div class="cav">
-        💬
-        <span class="online-ring off" id="onlineRing"></span>
-      </div>
+      <div class="cav">💬<span class="online-ring off" id="onlineRing"></span></div>
       <div class="cinfo">
         <h3 id="chatNome">Chat anônimo</h3>
         <div class="sub" id="chatSub">Carregando...</div>
       </div>
       <button class="btn-back" onclick="sairChat()">✕</button>
     </div>
-    <div class="async-bar">
-      💬 Mensagem assíncrona — a outra parte responde assim que abrir o app
-    </div>
+    <div class="async-bar">💬 Mensagem assíncrona — a outra parte responde assim que abrir o app</div>
     <div class="cmsgs" id="cmsgs">
       <div class="typi" id="typi"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     </div>
@@ -332,9 +372,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
     </div>
   </div>
 
-</div><!-- /app -->
+</div>
 
-<!-- MODAL DOADOR -->
+<!-- MODAL DOADOR CADASTRADO -->
 <div class="ov" id="modD">
   <div class="modal">
     <h3>🎉 Cadastrado!</h3>
@@ -347,16 +387,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
   </div>
 </div>
 
-<!-- MODAL PACIENTE -->
+<!-- MODAL PACIENTE CADASTRADO -->
 <div class="ov" id="modP">
   <div class="modal">
     <h3>✅ Registrado!</h3>
     <p>Código de contato anônimo:</p>
     <div class="mcode" id="mCodP">——</div>
     <div class="mhint">Doadores podem entrar no chat com este código. As mensagens ficam salvas — responda quando puder.</div>
-    <div class="minfo">✅ O chat é assíncrono: se um não estiver online, lê e responde quando abrir o app.</div>
+    <div class="minfo" id="modP_prazo">✅ O chat é assíncrono: se um não estiver online, lê e responde quando abrir o app.</div>
     <button class="cbtn" onclick="copiar('mCodP')">📋 Copiar código</button>
     <button class="btn-p" onclick="fecharMod('modP')">Entendido!</button>
+  </div>
+</div>
+
+<!-- MODAL REGISTRAR DOAÇÃO -->
+<div class="ov" id="modDoacao">
+  <div class="modal modal-left">
+    <h3 style="margin-bottom:14px">💉 Registrar Doação</h3>
+    <div class="field"><label>Data da doação</label><input id="md_data" type="date"></div>
+    <div class="field"><label>Local / Hemocentro</label><input id="md_local" placeholder="Ex: Hemoam, UPA..."></div>
+    <div class="field"><label>Observação (opcional)</label><input id="md_obs" placeholder="Ex: Doação de plaquetas"></div>
+    <button class="btn-p" style="margin-bottom:8px" onclick="confirmarDoacao()">✅ Adicionar</button>
+    <button class="cbtn" style="width:100%" onclick="fecharMod('modDoacao')">Cancelar</button>
   </div>
 </div>
 
@@ -385,28 +437,109 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 <div id="toast"></div>
 
 <script>
-// ══════════════════════════════════════════════════════
-//  CONFIG
-// ══════════════════════════════════════════════════════
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5lhZ2eBFzPCAcRvTwBN-YkaPJ1zrQnLXaq7OJp0RjPjLdxLMom8lLIqA7A1-3CFPS/exec';
 
-// ══════════════════════════════════════════════════════
-//  TEMA
-// ══════════════════════════════════════════════════════
+// TEMA
 let tema = localStorage.getItem('tema') || 'dark';
 document.documentElement.setAttribute('data-theme', tema);
 function toggleTheme(){ tema=tema==='dark'?'light':'dark'; localStorage.setItem('tema',tema); document.documentElement.setAttribute('data-theme',tema); }
 
-// ══════════════════════════════════════════════════════
-//  SESSÃO — quem está usando o app agora
-// ══════════════════════════════════════════════════════
-// Carrega/salva dados do usuário atual (doador ou responsável cadastrado)
+// SESSÃO
 let sessao = null;
 try { sessao = JSON.parse(localStorage.getItem('sessao')); } catch(e){}
+function salvarSessao(d){ sessao=d; localStorage.setItem('sessao',JSON.stringify(d)); }
 
-function salvarSessao(dados) {
-  sessao = dados;
-  localStorage.setItem('sessao', JSON.stringify(dados));
+// ══════════════════════════════════════════════════════
+//  FOTO
+// ══════════════════════════════════════════════════════
+let fotoDoadorB64 = null;
+let fotoPacienteB64 = null;
+
+function previewFoto(prefix, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    comprimirImagem(e.target.result, 300, function(b64c) {
+      if (prefix === 'd') fotoDoadorB64 = b64c;
+      else fotoPacienteB64 = b64c;
+      const circle = document.getElementById(prefix + '_foto_circle');
+      document.getElementById(prefix + '_foto_icon').style.display = 'none';
+      let img = circle.querySelector('img');
+      if (!img) { img = document.createElement('img'); circle.insertBefore(img, circle.firstChild); }
+      img.src = b64c;
+    });
+  };
+  reader.readAsDataURL(file);
+}
+
+function comprimirImagem(dataUrl, maxSize, cb) {
+  const img = new Image();
+  img.onload = function() {
+    let w = img.width, h = img.height;
+    if (w > h) { if (w > maxSize) { h = h*maxSize/w; w = maxSize; } }
+    else { if (h > maxSize) { w = w*maxSize/h; h = maxSize; } }
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    c.getContext('2d').drawImage(img, 0, 0, w, h);
+    cb(c.toDataURL('image/jpeg', 0.75));
+  };
+  img.src = dataUrl;
+}
+
+function limparFoto(prefix) {
+  if (prefix === 'd') fotoDoadorB64 = null;
+  else fotoPacienteB64 = null;
+  const circle = document.getElementById(prefix + '_foto_circle');
+  const img = circle.querySelector('img');
+  if (img) img.remove();
+  document.getElementById(prefix + '_foto_icon').style.display = '';
+}
+
+// ══════════════════════════════════════════════════════
+//  DOAÇÕES MANUAIS
+// ══════════════════════════════════════════════════════
+let doacoesList = [];
+
+function abrirModalDoacao() {
+  document.getElementById('md_data').value = new Date().toISOString().split('T')[0];
+  document.getElementById('md_local').value = '';
+  document.getElementById('md_obs').value = '';
+  document.getElementById('modDoacao').classList.add('open');
+}
+
+function confirmarDoacao() {
+  const data  = document.getElementById('md_data').value;
+  const local = document.getElementById('md_local').value.trim();
+  if (!data) return toast('⚠️ Informe a data da doação');
+  doacoesList.push({ data, local, obs: document.getElementById('md_obs').value.trim() });
+  renderDoacoes();
+  fecharMod('modDoacao');
+  toast('✅ Doação adicionada!');
+}
+
+function renderDoacoes() {
+  const lista = document.getElementById('d_doacoes_lista');
+  lista.innerHTML = '';
+  doacoesList.forEach((d, i) => {
+    const el = document.createElement('div');
+    el.className = 'doacao-item';
+    el.innerHTML = `<span>💉</span>
+      <div style="flex:1">
+        <div style="font-weight:500">${formatarData(d.data)}${d.local ? ' · ' + esc(d.local) : ''}</div>
+        ${d.obs ? `<div style="font-size:.72rem;color:var(--muted)">${esc(d.obs)}</div>` : ''}
+      </div>
+      <button class="di-rem" onclick="removerDoacao(${i})" title="Remover">✕</button>`;
+    lista.appendChild(el);
+  });
+}
+
+function removerDoacao(i) { doacoesList.splice(i,1); renderDoacoes(); }
+
+function formatarData(iso) {
+  if (!iso) return '—';
+  const [y,m,d] = iso.split('-');
+  return `${d}/${m}/${y}`;
 }
 
 // ══════════════════════════════════════════════════════
@@ -427,14 +560,10 @@ async function api(action, body={}) {
       });
     }
     return await resp.json();
-  } catch(e) {
-    return { ok: false, erro: e.message };
-  }
+  } catch(e) { return { ok:false, erro:e.message }; }
 }
 
-// ══════════════════════════════════════════════════════
-//  SPLASH + INIT
-// ══════════════════════════════════════════════════════
+// SPLASH + INIT
 setTimeout(() => {
   document.getElementById('splash').classList.add('out');
   setTimeout(async () => {
@@ -445,68 +574,35 @@ setTimeout(() => {
 }, 2400);
 
 async function inicializar() {
-  setConn('spin','Conectando...');
   const r = await api('setup');
-  if (r.ok) {
-    setConn('ok','Sistema online ✓');
-    mostrarMeuCodigo();
-    iniciarHeartbeat();
-  } else {
-    setConn('err','Sem conexão — tente novamente');
-  }
+  if (r.ok) { mostrarMeuCodigo(); iniciarHeartbeat(); }
 }
 
-// ══════════════════════════════════════════════════════
-//  MEU CÓDIGO (badge no menu)
-// ══════════════════════════════════════════════════════
+// MEU CÓDIGO
 function mostrarMeuCodigo() {
   if (!sessao || !sessao.codigo) return;
-  const bar = document.getElementById('meuCodigoBar');
-  bar.style.display = 'block';
+  document.getElementById('meuCodigoBar').style.display = 'block';
   document.getElementById('meuCodigoVal').textContent = sessao.codigo;
-  atualizarMeuStatus();
+  document.getElementById('meuStatusTxt').textContent = '🟢 Online agora';
 }
-
-function atualizarMeuStatus() {
-  const dot = document.getElementById('meuPdot');
-  const txt = document.getElementById('meuStatusTxt');
-  if (!sessao) return;
-  dot.className = 'pdot';
-  txt.textContent = '🟢 Online agora';
-}
-
 function copiarMeuCodigo() {
   if (!sessao) return;
-  navigator.clipboard?.writeText(sessao.codigo)
-    .then(()=>toast('✅ Código copiado!'))
-    .catch(()=>toast('Código: '+sessao.codigo));
+  navigator.clipboard?.writeText(sessao.codigo).then(()=>toast('✅ Código copiado!')).catch(()=>toast('Código: '+sessao.codigo));
 }
 
-// ══════════════════════════════════════════════════════
-//  HEARTBEAT — sinaliza presença a cada 30s
-// ══════════════════════════════════════════════════════
+// HEARTBEAT
 let heartbeatInt = null;
-
 function iniciarHeartbeat() {
   if (!sessao || !sessao.codigo) return;
-  // Envia imediatamente
-  api('heartbeat', { codigo: sessao.codigo, nomeExibido: sessao.nome || sessao.codigo, tipo: sessao.tipo || '' });
-  // Depois a cada 30s
+  api('heartbeat', { codigo: sessao.codigo, nomeExibido: sessao.nome||sessao.codigo, tipo: sessao.tipo||'' });
   if (heartbeatInt) clearInterval(heartbeatInt);
   heartbeatInt = setInterval(() => {
-    if (sessao && sessao.codigo) {
-      api('heartbeat', { codigo: sessao.codigo, nomeExibido: sessao.nome || sessao.codigo, tipo: sessao.tipo || '' });
-    }
+    if (sessao && sessao.codigo) api('heartbeat', { codigo: sessao.codigo, nomeExibido: sessao.nome||sessao.codigo, tipo: sessao.tipo||'' });
   }, 30000);
 }
+function pararHeartbeat() { if (heartbeatInt) { clearInterval(heartbeatInt); heartbeatInt=null; } }
 
-function pararHeartbeat() {
-  if (heartbeatInt) { clearInterval(heartbeatInt); heartbeatInt = null; }
-}
-
-// ══════════════════════════════════════════════════════
-//  HELPERS
-// ══════════════════════════════════════════════════════
+// HELPERS
 function ir(id){ document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa')); document.getElementById(id)?.classList.add('ativa'); window.scrollTo(0,0); }
 function toast(m,dur=3000){ const e=document.getElementById('toast'); e.textContent=m; e.classList.add('show'); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('show'),dur); }
 function copiar(id){ const t=document.getElementById(id).textContent.trim(); navigator.clipboard?.writeText(t).then(()=>toast('✅ Copiado!')).catch(()=>toast('Código: '+t)); }
@@ -515,85 +611,94 @@ function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')
 function limpar(ids){ ids.forEach(id=>{ const e=document.getElementById(id); if(e) e.value=''; }); }
 function fecharMod(id){ document.getElementById(id).classList.remove('open'); }
 function setBusy(id,busy,label){ const b=document.getElementById(id); if(!b)return; b.disabled=busy; b.textContent=busy?'⏳ Salvando...':label; }
-function setConn(state,txt){ /* removido */ }
 
-// ══════════════════════════════════════════════════════
-//  SAIR
-// ══════════════════════════════════════════════════════
+// SAIR
 function pedirSair() { document.getElementById('modSair').classList.add('open'); }
-
 function confirmarSair() {
-  fecharMod('modSair');
-  pararHeartbeat();
+  fecharMod('modSair'); pararHeartbeat();
   if (chatPoll) { clearInterval(chatPoll); chatPoll=null; }
-  document.getElementById('app').style.display = 'none';
+  document.getElementById('app').style.display='none';
   document.getElementById('telaFechada').classList.add('open');
-  toast('Sistema encerrado. Suas mensagens continuam salvas.');
 }
-
 function reabrirApp() {
   document.getElementById('telaFechada').classList.remove('open');
-  document.getElementById('app').style.display = '';
-  ir('menu');
-  inicializar();
+  document.getElementById('app').style.display='';
+  ir('menu'); inicializar();
 }
 
 // ══════════════════════════════════════════════════════
 //  CADASTRO DOADOR
 // ══════════════════════════════════════════════════════
 async function salvarDoador(){
-  const nome=document.getElementById('d_nome').value.trim();
-  const tipo=document.getElementById('d_tipo').value;
-  if(!nome) return toast('⚠️ Preencha o nome');
-  if(!tipo) return toast('⚠️ Selecione o tipo sanguíneo');
-  setBusy('btnD',true,'Cadastrar');
-  const r=await api('addDoador',{
+  const nome = document.getElementById('d_nome').value.trim();
+  const tipo = document.getElementById('d_tipo').value;
+  if (!nome) return toast('⚠️ Preencha o nome');
+  if (!tipo) return toast('⚠️ Selecione o tipo sanguíneo');
+  setBusy('btnD', true, 'Cadastrar');
+  const r = await api('addDoador', {
     nome, tipo,
-    data:   document.getElementById('d_data').value,
-    cidade: document.getElementById('d_cidade').value.trim(),
-    estado: document.getElementById('d_estado').value.trim().toUpperCase(),
-    apto:   document.getElementById('d_apto').value
+    cidade:  document.getElementById('d_cidade').value.trim(),
+    estado:  document.getElementById('d_estado').value.trim().toUpperCase(),
+    apto:    document.getElementById('d_apto').value,
+    foto:    fotoDoadorB64 || '',
+    doacoes: JSON.stringify(doacoesList)
   });
-  if(r.ok){
-    // Salva sessão do usuário
+  if (r.ok) {
     salvarSessao({ codigo: r.codigo, nome, tipo: 'doador' });
     document.getElementById('mCodD').textContent = r.codigo;
     document.getElementById('modD').classList.add('open');
-    limpar(['d_nome','d_data','d_cidade','d_estado']);
-    document.getElementById('d_tipo').value='';
-    document.getElementById('d_apto').value='sim';
-    mostrarMeuCodigo();
-    iniciarHeartbeat();
+    limpar(['d_nome','d_cidade','d_estado']);
+    document.getElementById('d_tipo').value=''; document.getElementById('d_apto').value='sim';
+    doacoesList=[]; renderDoacoes(); limparFoto('d');
+    mostrarMeuCodigo(); iniciarHeartbeat();
   } else toast('❌ Erro: '+(r.erro||'Falha ao salvar'));
-  setBusy('btnD',false,'Cadastrar');
+  setBusy('btnD', false, 'Cadastrar');
 }
 
 // ══════════════════════════════════════════════════════
 //  CADASTRO PACIENTE
 // ══════════════════════════════════════════════════════
 async function salvarPaciente(){
-  const nome=document.getElementById('p_nome').value.trim();
-  const hosp=document.getElementById('p_hosp').value.trim();
-  if(!nome) return toast('⚠️ Preencha o nome do paciente');
-  if(!hosp) return toast('⚠️ Preencha o hospital');
-  setBusy('btnP',true,'Registrar');
-  const r=await api('addPaciente',{
-    nome, hospital:hosp,
+  const nome = document.getElementById('p_nome').value.trim();
+  const hosp = document.getElementById('p_hosp').value.trim();
+  if (!nome) return toast('⚠️ Preencha o nome do paciente');
+  if (!hosp) return toast('⚠️ Preencha o hospital');
+  const prazo = document.getElementById('p_prazo').value;
+  // Valida que o prazo não é no passado
+  if (prazo) {
+    const hoje = new Date(); hoje.setHours(0,0,0,0);
+    const venc = new Date(prazo + 'T00:00:00');
+    if (venc < hoje) return toast('⚠️ A data limite não pode ser no passado');
+  }
+  setBusy('btnP', true, 'Registrar');
+  const r = await api('addPaciente', {
+    nome, hospital: hosp,
+    endereco: document.getElementById('p_end').value.trim(),
     registro: document.getElementById('p_reg').value.trim(),
     tipo:     document.getElementById('p_tipo').value,
     qtd:      document.getElementById('p_qtd').value,
-    obs:      document.getElementById('p_obs').value.trim()
+    obs:      document.getElementById('p_obs').value.trim(),
+    prazo:    prazo || '',
+    foto:     fotoPacienteB64 || ''
   });
-  if(r.ok){
+  if (r.ok) {
     salvarSessao({ codigo: r.codigo, nome, tipo: 'paciente' });
     document.getElementById('mCodP').textContent = r.codigo;
+    const prazoInfo = document.getElementById('modP_prazo');
+    if (prazo) {
+      prazoInfo.innerHTML = `📅 Este registro expira em <b>${formatarData(prazo)}</b>. Após essa data, será excluído automaticamente.`;
+      prazoInfo.style.color = '#f59e0b'; prazoInfo.style.borderColor = 'rgba(245,158,11,.25)'; prazoInfo.style.background = 'rgba(245,158,11,.07)';
+    } else {
+      prazoInfo.innerHTML = '✅ Sem data definida, o registro expira automaticamente em 181 dias do cadastro.';
+      prazoInfo.style.color=''; prazoInfo.style.borderColor=''; prazoInfo.style.background='';
+    }
     document.getElementById('modP').classList.add('open');
-    limpar(['p_nome','p_hosp','p_reg','p_qtd','p_obs']);
+    limpar(['p_nome','p_hosp','p_end','p_reg','p_qtd','p_obs','p_prazo']);
     document.getElementById('p_tipo').value='';
-    mostrarMeuCodigo();
-    iniciarHeartbeat();
+    limparFoto('p');
+    mostrarMeuCodigo(); iniciarHeartbeat();
   } else toast('❌ Erro: '+(r.erro||'Falha ao salvar'));
-  setBusy('btnP',false,'Registrar');
+  setBusy('btnP', false, 'Registrar');
 }
 
 // ══════════════════════════════════════════════════════
@@ -601,30 +706,51 @@ async function salvarPaciente(){
 // ══════════════════════════════════════════════════════
 async function verPacientes(){
   ir('lstPac');
-  const div=document.getElementById('divPac');
-  div.innerHTML='<div class="loading"><div class="spinner"></div><br>Carregando...</div>';
-  const r=await api('listarPacientes');
-  div.innerHTML='';
-  if(!r.ok){ div.innerHTML=`<div class="empty">❌ ${r.erro||'Erro de conexão'}</div>`; return; }
-  if(!r.lista.length){ div.innerHTML='<div class="empty">Nenhum paciente cadastrado ainda.</div>'; return; }
-  // Busca presença de todos
-  for(const p of r.lista){ div.appendChild(await criarCardPaciente(p)); }
+  const div = document.getElementById('divPac');
+  div.innerHTML = '<div class="loading"><div class="spinner"></div><br>Carregando...</div>';
+  const r = await api('listarPacientes');
+  div.innerHTML = '';
+  if (!r.ok) { div.innerHTML=`<div class="empty">❌ ${r.erro||'Erro de conexão'}</div>`; return; }
+  if (!r.lista.length) { div.innerHTML='<div class="empty">Nenhum paciente cadastrado ainda.</div>'; return; }
+  for (const p of r.lista) { div.appendChild(await criarCardPaciente(p)); }
 }
 
 async function criarCardPaciente(p){
-  const el=document.createElement('div'); el.className='item';
-  // Busca presença
-  const pr = await api('presencaSala',{sala:p.codigo});
+  const el = document.createElement('div'); el.className = 'item';
+  const pr = await api('presencaSala', { sala: p.codigo });
   const onlineTxt = pr.online ? '🟢 Online agora' : (pr.ultimoAcesso ? '⚫ Visto: '+pr.ultimoAcesso : '⚫ Nunca acessou');
-  const pclass    = pr.online ? '' : 'off';
+  const pclass = pr.online ? '' : 'off';
 
-  el.innerHTML=`
-    ${p.tipo?`<span class="badge">${p.tipo}</span>`:''}
-    <h3>${esc(p.nome)}</h3>
+  // Prazo
+  let prazoHtml = '';
+  if (p.prazo) {
+    const hoje = new Date(); hoje.setHours(0,0,0,0);
+    const venc = new Date(p.prazo + 'T00:00:00');
+    const diff = Math.round((venc - hoje) / 86400000);
+    if (diff < 0) prazoHtml = `<div><span class="prazo-badge exp">⚠️ Prazo expirado</span></div>`;
+    else if (diff === 0) prazoHtml = `<div><span class="prazo-badge warn">⏳ Último dia!</span></div>`;
+    else if (diff <= 3) prazoHtml = `<div><span class="prazo-badge warn">⏳ Expira em ${diff} dia(s)</span></div>`;
+    else prazoHtml = `<div><span class="prazo-badge ok">📅 Até ${formatarData(p.prazo)}</span></div>`;
+  }
+
+  const avatarHtml = p.foto
+    ? `<div class="item-avatar"><img src="${p.foto}" alt="foto paciente"></div>`
+    : `<div class="item-avatar">🏥</div>`;
+
+  el.innerHTML = `
+    <div class="item-header">
+      ${avatarHtml}
+      <div class="item-info">
+        ${p.tipo ? `<span class="badge">${p.tipo}</span>` : ''}
+        <h3>${esc(p.nome)}</h3>
+        ${prazoHtml}
+      </div>
+    </div>
     <div class="meta">
       🏥 ${esc(p.hospital)}
-      ${p.qtd?`<br>👥 ${p.qtd} doador(es)`:''}
-      ${p.obs?`<br>📝 ${esc(p.obs)}`:''}
+      ${p.endereco ? `<br>📍 ${esc(p.endereco)}` : ''}
+      ${p.qtd ? `<br>👥 ${p.qtd} doador(es)` : ''}
+      ${p.obs ? `<br>📝 ${esc(p.obs)}` : ''}
     </div>
     <div class="code-line">
       <div>
@@ -643,25 +769,45 @@ async function criarCardPaciente(p){
 
 async function verDoadores(){
   ir('lstDoad');
-  const div=document.getElementById('divDoad');
-  div.innerHTML='<div class="loading"><div class="spinner"></div><br>Carregando...</div>';
-  const r=await api('listarDoadores');
-  div.innerHTML='';
-  if(!r.ok){ div.innerHTML=`<div class="empty">❌ ${r.erro||'Erro de conexão'}</div>`; return; }
-  if(!r.lista.length){ div.innerHTML='<div class="empty">Nenhum doador disponível agora.</div>'; return; }
-  for(const p of r.lista){ div.appendChild(await criarCardDoador(p)); }
+  const div = document.getElementById('divDoad');
+  div.innerHTML = '<div class="loading"><div class="spinner"></div><br>Carregando...</div>';
+  const r = await api('listarDoadores');
+  div.innerHTML = '';
+  if (!r.ok) { div.innerHTML=`<div class="empty">❌ ${r.erro||'Erro de conexão'}</div>`; return; }
+  if (!r.lista.length) { div.innerHTML='<div class="empty">Nenhum doador disponível agora.</div>'; return; }
+  for (const p of r.lista) { div.appendChild(await criarCardDoador(p)); }
 }
 
 async function criarCardDoador(p){
-  const el=document.createElement('div'); el.className='item';
-  const pr = await api('presencaSala',{sala:p.codigo});
+  const el = document.createElement('div'); el.className = 'item';
+  const pr = await api('presencaSala', { sala: p.codigo });
   const onlineTxt = pr.online ? '🟢 Online agora' : (pr.ultimoAcesso ? '⚫ Visto: '+pr.ultimoAcesso : '⚫ Nunca acessou');
-  const pclass    = pr.online ? '' : 'off';
+  const pclass = pr.online ? '' : 'off';
 
-  el.innerHTML=`
-    ${p.tipo?`<span class="badge">${p.tipo}</span>`:''}
-    <h3>${esc(p.nome)}</h3>
-    <div class="meta">📍 ${esc(p.cidade||'—')}${p.estado?', '+p.estado:''}</div>
+  const avatarHtml = p.foto
+    ? `<div class="item-avatar"><img src="${p.foto}" alt="foto doador"></div>`
+    : `<div class="item-avatar">🩸</div>`;
+
+  // Histórico de doações
+  let doacoesHtml = '';
+  if (p.doacoes && p.doacoes.length > 0) {
+    const ultimas = p.doacoes.slice(-3).reverse();
+    doacoesHtml = `<div class="doacoes-card">
+      💉 <b>${p.doacoes.length}</b> doação(ões) registrada(s)
+      ${ultimas.map(d=>`<br><span style="opacity:.7">• ${formatarData(d.data)}${d.local?' — '+esc(d.local):''}</span>`).join('')}
+    </div>`;
+  }
+
+  el.innerHTML = `
+    <div class="item-header">
+      ${avatarHtml}
+      <div class="item-info">
+        ${p.tipo ? `<span class="badge">${p.tipo}</span>` : ''}
+        <h3>${esc(p.nome)}</h3>
+        <div class="meta" style="margin:0">📍 ${esc(p.cidade||'—')}${p.estado?', '+p.estado:''}</div>
+      </div>
+    </div>
+    ${doacoesHtml}
     <div class="code-line">
       <div>
         <div style="font-size:.68rem;color:var(--muted);margin-bottom:3px">Código chat</div>
@@ -676,102 +822,86 @@ async function criarCardDoador(p){
   return el;
 }
 
-async function remover(col,id){
-  if(!confirm('Remover este registro?')) return;
+async function remover(col, id){
+  if (!confirm('Remover este registro?')) return;
   toast('⏳ Removendo...');
-  const r=await api('deletar',{colecao:col,id});
-  if(r.ok){ toast('🗑 Removido!'); col==='pacientes'?verPacientes():verDoadores(); }
+  const r = await api('deletar', { colecao: col, id });
+  if (r.ok) { toast('🗑 Removido!'); col==='pacientes'?verPacientes():verDoadores(); }
   else toast('❌ '+(r.erro||'Erro'));
 }
 
-let _atendidoId=null;
-function pedirAtendido(id,nome){
+let _atendidoId = null;
+function pedirAtendido(id, nome){
   _atendidoId=id;
   document.getElementById('atendidoNome').textContent='Paciente: '+nome;
   document.getElementById('modAtendido').classList.add('open');
 }
 async function confirmarAtendido(){
-  fecharMod('modAtendido');
-  toast('⏳ Atualizando...');
-  const r=await api('atualizarStatus',{colecao:'pacientes',id:_atendidoId,novoStatus:'atendido'});
-  if(r.ok){ toast('✅ Marcado como atendido!'); verPacientes(); }
+  fecharMod('modAtendido'); toast('⏳ Atualizando...');
+  const r = await api('atualizarStatus', { colecao:'pacientes', id:_atendidoId, novoStatus:'atendido' });
+  if (r.ok) { toast('✅ Marcado como atendido!'); verPacientes(); }
   else toast('❌ '+(r.erro||'Erro'));
 }
 
 // ══════════════════════════════════════════════════════
-//  CHAT ASSÍNCRONO — polling 5s, mensagens salvas no Sheets
+//  CHAT
 // ══════════════════════════════════════════════════════
 let chatCod=null, chatPoll=null, lastCount=0;
-const meuId = 'U'+ Math.random().toString(36).slice(2,6).toUpperCase();
-const meuNome = sessao ? (sessao.nome || sessao.codigo) : 'Anônimo';
+const meuId = 'U'+Math.random().toString(36).slice(2,6).toUpperCase();
 
 function entrarChat(){
-  const c=document.getElementById('codeInput').value.trim().toUpperCase();
-  if(c.length<4) return toast('⚠️ Código inválido');
-  iniciarChat(c,'Sala '+c,'anonimo');
+  const c = document.getElementById('codeInput').value.trim().toUpperCase();
+  if (c.length < 4) return toast('⚠️ Código inválido');
+  iniciarChat(c, 'Sala '+c, 'anonimo');
 }
 
-function iniciarChat(cod,nome,tipo){
+function iniciarChat(cod, nome, tipo){
   chatCod=cod.toUpperCase(); lastCount=0;
   document.getElementById('chatNome').textContent=(tipo==='paciente'?'🏥 ':tipo==='doador'?'🩸 ':'💬 ')+nome;
   document.getElementById('chatSub').innerHTML='<span class="spinner" style="width:10px;height:10px;border-width:1.5px"></span> Carregando...';
   document.getElementById('cmsgs').innerHTML='<div class="typi" id="typi"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
   ir('chatTela');
-
-  // Heartbeat para a sala (usa o código da sala como identificador de presença)
-  if(sessao && sessao.codigo) {
-    api('heartbeat', { codigo: sessao.codigo, nomeExibido: sessao.nome || sessao.codigo, tipo: sessao.tipo });
-  }
-
-  buscarPresenca(cod);
-  buscarMsgs(true);
-  if(chatPoll) clearInterval(chatPoll);
-  chatPoll=setInterval(()=>{ buscarMsgs(false); buscarPresenca(cod); }, 5000);
+  if (sessao && sessao.codigo) api('heartbeat',{ codigo:sessao.codigo, nomeExibido:sessao.nome||sessao.codigo, tipo:sessao.tipo });
+  buscarPresenca(cod); buscarMsgs(true);
+  if (chatPoll) clearInterval(chatPoll);
+  chatPoll = setInterval(()=>{ buscarMsgs(false); buscarPresenca(cod); }, 5000);
   addSys('💬 Sala '+chatCod+' · Mensagens salvas automaticamente');
 }
 
 async function buscarPresenca(cod) {
   const pr = await api('presencaSala',{sala:cod});
-  const ring = document.getElementById('onlineRing');
-  const sub  = document.getElementById('chatSub');
-  if(pr.online){
+  const ring=document.getElementById('onlineRing'), sub=document.getElementById('chatSub');
+  if (pr.online) {
     if(ring) ring.className='online-ring';
     if(sub) sub.innerHTML='🟢 <b>Online agora</b> — vai receber sua mensagem';
   } else {
     if(ring) ring.className='online-ring off';
-    const ult = pr.ultimoAcesso ? 'Visto por último: '+pr.ultimoAcesso : 'Ainda não acessou';
+    const ult=pr.ultimoAcesso?'Visto por último: '+pr.ultimoAcesso:'Ainda não acessou';
     if(sub) sub.innerHTML='⚫ Offline · '+ult+' — responde quando abrir o app';
   }
 }
 
 async function buscarMsgs(inicial){
-  if(!chatCod) return;
-  const r=await api('listarMsgs',{sala:chatCod});
-  if(!r.ok) return;
-  const novas=r.msgs.slice(lastCount);
-  novas.forEach(m=>{
-    const sou = m.de === meuId;
-    addBub(m.texto, sou, m.hora, sou ? '' : (m.nomeExibido||''));
-  });
-  if(novas.length>0) scrollB();
+  if (!chatCod) return;
+  const r = await api('listarMsgs',{sala:chatCod});
+  if (!r.ok) return;
+  const novas = r.msgs.slice(lastCount);
+  novas.forEach(m=>{ const sou=m.de===meuId; addBub(m.texto,sou,m.hora,sou?'':(m.nomeExibido||'')); });
+  if (novas.length>0) scrollB();
   lastCount=r.msgs.length;
 }
 
 async function enviar(){
   const input=document.getElementById('msgIn'), txt=input.value.trim();
-  if(!txt||!chatCod) return;
+  if (!txt||!chatCod) return;
   input.value='';
-  const nomeExibido = sessao ? (sessao.nome || sessao.codigo) : meuId;
+  const nomeExibido=sessao?(sessao.nome||sessao.codigo):meuId;
   addBub(txt,true,agora(),''); scrollB(); lastCount++;
-  await api('enviarMsg',{ sala:chatCod, de:meuId, nomeExibido, texto:txt, hora:agora() });
-  // Heartbeat após envio
-  if(sessao && sessao.codigo) api('heartbeat',{ codigo:sessao.codigo, nomeExibido, tipo:sessao.tipo });
+  await api('enviarMsg',{sala:chatCod,de:meuId,nomeExibido,texto:txt,hora:agora()});
+  if (sessao&&sessao.codigo) api('heartbeat',{codigo:sessao.codigo,nomeExibido,tipo:sessao.tipo});
 }
 
-function sairChat(){
-  if(chatPoll){ clearInterval(chatPoll); chatPoll=null; }
-  chatCod=null; ir('menu');
-}
+function sairChat(){ if(chatPoll){clearInterval(chatPoll);chatPoll=null;} chatCod=null; ir('menu'); }
 
 function addBub(txt,sou,hora,nomeExibido){
   const d=document.createElement('div'); d.className='bub '+(sou?'me':'them');
